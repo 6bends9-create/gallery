@@ -1,0 +1,154 @@
+@charset "utf-8";
+
+
+.container {
+  width: 95vw;
+  margin: 0 auto;
+}
+
+header {
+  height: 20vh;
+}
+
+header ul {
+}
+
+header li {
+  font-size: 0.8rem;
+  padding: 8px 0;
+}
+
+header ul li + li{
+ border-top: 1px solid rgb(227, 227, 227);
+}
+
+header li:last-child {
+  border-bottom: 1px solid rgb(227, 227, 227);
+}
+
+header input {
+  margin-left: 20px;
+}
+
+.mail-list li span{
+  padding: 2px;
+  width: 80px;
+  text-align: center;
+  display:inline-block;
+  margin-left: 2%;
+  border-radius: 4px;
+  background-color: rgb(141, 63, 63);
+  color: white;
+  letter-spacing: 1.2px;
+}
+.mail-list .me {
+  padding: 2px;
+  width: 50px;
+  text-align: center;
+  display:inline-block;
+  margin-left: 2%;
+  border-radius: 4px;
+  background-color: rgb(54, 74, 9);
+  color: white;
+  letter-spacing: 1.2px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*==================================================
+ギャラリーのためのcss
+===================================*/
+.gallery{
+columns: 4;/*段組みの数*/
+padding:0 15px;/*ギャラリー左右に余白をつける*/
+}
+
+.gallery li {
+    margin-bottom: 20px;/*各画像下に余白をつける*/
+}
+
+/*ギャラリー内のイメージは横幅100%にする*/
+.gallery img{
+  width:100%;
+  height:auto;
+  vertical-align: bottom;/*画像の下にできる余白を削除*/}
+
+/*　横幅900px以下の段組み設定　*/
+@media only screen and (max-width: 900px) {
+  .gallery{
+  columns:3;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .gallery{
+  columns: 2;
+  }
+}
+
+
+/*========= レイアウトのためのCSS ===============*/
+
+ul{
+  margin:0;
+  padding: 0;
+  list-style: none;
+}
+
+a{
+  color: #333;
+}
+
+a:hover,
+a:active{
+  text-decoration: none;
+}
+
+h1{
+  text-align: center;
+  font-size:6vw;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin:30px 0;
+}
+
+p{
+  margin:0 10px 10px 10px;
+  word-wrap : break-word;
+}
+
+/*画像を出現させるアニメーションCSS*/
+
+.flipLeft{
+animation-name: flipLeft;
+animation-duration:0.5s;
+animation-fill-mode:forwards;
+perspective-origin: left center;
+opacity: 0;
+}
+
+@keyframes flipLeft{
+  from {
+   transform: perspective(600px) translate3d(0, 0, 0) rotateY(30deg);
+  opacity: 0;
+  }
+
+  to {
+  transform: perspective(600px) translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+  }
+}
+
+
+
